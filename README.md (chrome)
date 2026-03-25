@@ -1,0 +1,42 @@
+# SleekLine-v1.css
+complete opposite or HostileStyle-sheet.css
+Step 1 — Install Stylus
+Chrome Web Store link (safe + official):
+Code
+https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne
+Click Add to Chrome.
+Step 2 — Create a New Style
+Click the Stylus icon in Chrome
+Select Manage
+Click Write new style
+Name it something like:
+Code
+ETHANOS DARK ENGINE v8
+Step 3 — Paste the Entire CSS Code
+Copy your full hostile‑terminal CSS block and paste it into the editor.
+Make sure:
+No extra formatting
+No smart quotes
+No RTF artifacts
+Just plain text
+Stylus handles it perfectly.
+Step 4 — Set the Style to Apply Everywhere
+At the top of the Stylus editor:
+Click Applies to → URLs starting with
+Change it to:
+Code
+http://*
+https://*
+Or simply choose "All sites".
+Step 5 — Save
+Click Save in the top‑left corner.
+Your glitch engine is now active on Chrome for Windows.
+Done
+Windows users now get:
+REND_R sigil flashes
+Dead pixel overlays
+RGB split
+Data tearing
+Redaction
+Global flicker
+Discord‑safe mode (no shake, no overrides)
