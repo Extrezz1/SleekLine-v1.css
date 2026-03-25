@@ -52,7 +52,7 @@ body::before {
   line-height: 1.1;
   color: rgba(255, 166, 59, 0.6); /* now visible */
   pointer-events: none;
-  z-index: 1;
+  z-index: 10;
   text-shadow: 0 0 8px rgba(255, 166, 59, 0.25);
   animation: sl-pulse 6s ease-in-out infinite;
 }
@@ -84,6 +84,33 @@ body::after {
   line-height: 1.1;
   color: rgba(255, 166, 59, 0.6);
   pointer-events: none;
-  z-index: 2;
+  z-index: 11;
   animation: sl-hudbars 2.5s steps(1, end) infinite;
+}
+
+/* Sleekline — Scan Line (moved to html::after) */
+@keyframes sl-scan {
+  0%   { top: 100%; }
+  50%  { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes sl-distort {
+  0% { filter: blur(0px); }
+  50% { filter: blur(0.6px); }
+  100% { filter: blur(0px); }
+}
+
+html::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 166, 59, 0.35);
+  backdrop-filter: blur(1px);
+  z-index: 9999;
+  animation: sl-scan 4s linear infinite,
+             sl-distort 4s steps(1, end) infinite;
+  pointer-events: none;
 }
