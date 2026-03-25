@@ -1,0 +1,89 @@
+/* Sleekline — Full Bright Orange Text */
+:root {
+  --sl-text: #FFA63B;
+  --sl-text-soft: #FFC78A;
+}
+
+/* Make ALL text orange */
+body, html, * {
+  color: var(--sl-text) !important;
+}
+
+/* Secondary UI text */
+small, .subtle, .secondary, .hint, .timestamp {
+  color: var(--sl-text-soft) !important;
+}
+
+/* Sleekline Background */
+html, body {
+  background: #F4F4F6 !important;
+}
+
+/* Sleekline — Subtle Hover Glitch */
+@keyframes sl-glitch-subtle {
+  0% { transform: translate(0, 0); }
+  30% { transform: translate(0.5px, -0.5px); }
+  60% { transform: translate(-0.5px, 0.5px); }
+  100% { transform: translate(0, 0); }
+}
+
+.glitch:hover,
+p:hover, span:hover, div:hover {
+  animation: sl-glitch-subtle 80ms steps(2, end);
+}
+
+/* Sleekline — Triangle Pulse */
+@keyframes sl-pulse {
+  0%   { opacity: 0.18; transform: translate(-50%, -50%) scale(1); }
+  50%  { opacity: 0.32; transform: translate(-50%, -50%) scale(1.03); }
+  100% { opacity: 0.18; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Center ASCII Triangle */
+body::before {
+  content: "  /\\\A  /  \\\A /____\\";
+  white-space: pre;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+  font-size: 32px;
+  line-height: 1.1;
+  color: rgba(255, 166, 59, 0.6); /* now visible */
+  pointer-events: none;
+  z-index: 1;
+  text-shadow: 0 0 8px rgba(255, 166, 59, 0.25);
+  animation: sl-pulse 6s ease-in-out infinite;
+}
+
+/* Sleekline — Dual HUD Bars */
+@keyframes sl-hudbars {
+    0%   { content: "SYS OK  |  [█░░░░░░░░░]\A[▂▄▅▇█▇▅▄▂]"; }
+    10%  { content: "SYS OK  |  [██░░░░░░░░]\A[▄▅▇█▇▅▄▂▁]"; }
+    20%  { content: "SYS OK  |  [███░░░░░░░]\A[▅▇█▇▅▄▂▁▂]"; }
+    30%  { content: "SYS OK  |  [████░░░░░░]\A[▇█▇▅▄▂▁▂▄]"; }
+    40%  { content: "SYS OK  |  [█████░░░░░]\A[█▇▅▄▂▁▂▄▅]"; }
+    50%  { content: "SYS OK  |  [██████░░░░]\A[▇▅▄▂▁▂▄▅▇]"; }
+    60%  { content: "SYS OK  |  [███████░░░]\A[▅▄▂▁▂▄▅▇█]"; }
+    70%  { content: "SYS OK  |  [████████░░]\A[▄▂▁▂▄▅▇█▇]"; }
+    80%  { content: "SYS OK  |  [█████████░]\A[▂▁▂▄▅▇█▇▅]"; }
+    90%  { content: "SYS OK  |  [██████████]\A[▂▄▅▇█▇▅▄▂]"; }
+    100% { content: "SYS OK  |  [█░░░░░░░░░]\A[▂▄▅▇█▇▅▄▂]"; }
+}
+
+/* HUD beside the triangle */
+body::after {
+  content: "SYS OK  |  [█░░░░░░░░░]\A[▂▄▅▇█▇▅▄▂]";
+  white-space: pre;
+  position: fixed;
+  top: calc(50% - 10px);
+  left: calc(50% + 60px);
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.1;
+  color: rgba(255, 166, 59, 0.6);
+  pointer-events: none;
+  z-index: 2;
+  animation: sl-hudbars 2.5s steps(1, end) infinite;
+}
