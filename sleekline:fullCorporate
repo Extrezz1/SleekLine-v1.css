@@ -1,0 +1,26 @@
+/* Sleekline — Full Bright Orange Text */
+:root {
+    --sl-text: #FFA63B;
+    --sl-text-soft: #FFC78A;
+}
+
+/* Make ALL text orange */
+body,
+html,
+* {
+    color: var(--sl-text) !important;
+}
+
+/* Secondary UI text */
+small,
+.subtle,
+.secondary,
+.hint,
+.timestamp {
+    color: var(--sl-text-soft) !important;
+}
+
+/* Sleekline Background */
+html,
+body {
+    background: #F4F4F6 !important;
